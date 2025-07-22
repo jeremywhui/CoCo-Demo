@@ -1,0 +1,52 @@
+[workspace]
+members = [
+    "kbs",
+    "attestation-service",
+    "rvps",
+    "tools/kbs-client",
+    "deps/verifier",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["The Confidential Container Authors"]
+description = "Confidential Container Tools and Components for the tenant side"
+documentation = "https://github.com/confidential-containers/kbs"
+edition = "2021"
+
+[workspace.dependencies]
+actix-web = "4"
+actix-web-httpauth = "0.8.0"
+anyhow = "1.0"
+assert-json-diff = "2.0.2"
+async-trait = "0.1.31"
+base64 = "0.22.1"
+cfg-if = "1.0.0"
+chrono = "0.4.19"
+clap = { version = "4", features = ["derive"] }
+config = "0.13.3"
+env_logger = "0.10.0"
+hex = "0.4.3"
+jwt-simple = "0.11"
+kbs_protocol = { git = "https://github.com/confidential-containers/guest-components.git", tag="v0.10.0", default-features = false }
+kbs-types = "0.7.0"
+kms = { git = "https://github.com/confidential-containers/guest-components.git", tag="v0.10.0", default-features = false }
+jsonwebtoken = { version = "9", default-features = false }
+log = "0.4.17"
+prost = "0.12"
+regorus = { version = "0.1.5", default-features = false, features = ["regex", "base64", "time"] }
+reqwest = { version = "0.12", default-features = false, features = ["default-tls"] }
+rstest = "0.18.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.89"
+serde_with = { version = "1.11.0", features = ["base64", "hex"] }
+serial_test = "0.9.0"
+sha2 = "0.10"
+shadow-rs = "0.19.0"
+strum = { version = "0.25", features = ["derive"] }
+thiserror = "1.0"
+tokio = { version = "1", features = ["full"], default-features = false  }
+tempfile = "3.4.0"
+tonic = "0.11"
+tonic-build = "0.11"
